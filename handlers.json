@@ -1,0 +1,8 @@
+[
+  {
+    "command": "simple",
+    "pkg": "command-simple",
+    "tokenVar": "COMMAND_SIMPLE_TOKEN",
+    "options": {"protocol": "https"}
+  }
+]
