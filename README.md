@@ -1,5 +1,14 @@
 # command-server
-A simple Slack slash command server example
+A simple Slack Slash Command Server example, includes a very simple slash command (command-simple).
+
+This Slash Command Server supports new slash commands via npm modules.
+
+In the following steps we'll cover how to:
+1. Clone a copy of the Command Server locally.
+2. Run and test the Command Server locally.
+3. Install the Command Server on Heroku.
+4. Testing you Slash Command on Slack
+5. Adding a new Slash Command.
 
 Clone the command server:
 ```
@@ -21,7 +30,7 @@ npm i --save nconf
 
 Edit run.sh. Enter your Slack token
 ```
-COMMAND_SIMPLE_TOKEN=<your slack token goes here> node server.js
+COMMAND_SIMPLE_TOKEN=<any value for right now> node server.js
 ```
 
 Run the command server locally:
@@ -50,10 +59,10 @@ POST
 
 Enter Post Body
 ```
-{"token":"<your slack token goes here>", "text": "Text sent to command-simple handler"}
+{"token":"<any value for right now>", "text": "Text sent to command-simple handler"}
 ```
 
-Click on Send Button and see view test results in 'Response' section.
+Click on Send Button and view test results in the 'Response' section.
 
 Adding command-server to Heroku
 
@@ -112,10 +121,65 @@ POST
 
 Enter Post Body
 ```
-{"token":"<the value you set for COMMAND_SIMPLE_TOKEN>", "text": "Text sent to command-simple handler"}
+{"token":"<any value for right now>", "text": "Text sent to command-simple handler"}
 ```
 
 Click on Send Button and see view test results in 'Response' section.
+
+Testing your Slash Command on Slack
+
+Go to your team's Slack integration page
+```
+https://<your team>.slack.com/apps/manage/custom-integrations
+```
+
+Enter the name of your command in the 'Command' field:
+```
+/simple
+```
+
+Enter your Slash Command Server url into the 'URL' field:
+```
+https://command-server.herokuapp.com/svc/slack/simple
+```
+Change the 'Method' to be set to 'Post'
+
+Check the 'Show this command in the autocomplete list' checkbox
+
+Click the 'Save Integration' button. 
+
+Copy the 'Token' for your Slash Command.
+
+Re-edit your Heroku app settings.
+
+In Chrome, go to your new app's setting page
+```
+https://dashboard.heroku.com/apps/command-server/settings
+```
+
+Add a new setting the simple command token
+```
+COMMAND_SIMPLE_TOKEN    <the copied token value from Slack>
+```
+
+Test the Slash command in Slack
+
+Go to a channel in Slack and enter:
+```
+'/simple whatever'
+```
+
+You should see this response within Slack:
+```
+slackbot [3:47 PM] Only you can see this message
+Received commmand with text: whatever
+```
+
+Adding a new Slash Command:
+1. First create a Slash Command and upload to github
+2. Publish the new Slash Command on npmjs.com
+3. Add your new Slash Command to your Slash Command Server
+4. Test your new Slash Command on Slack
 
 
 
