@@ -4,11 +4,13 @@ A simple Slack Slash Command Server example, includes a very simple slash comman
 This Slash Command Server supports new slash commands via npm modules.
 
 In the following steps we'll cover how to:
+```
 1. Clone a copy of the Command Server locally.
 2. Run and test the Command Server locally.
 3. Install the Command Server on Heroku.
 4. Testing you Slash Command on Slack
 5. Adding a new Slash Command.
+```
 
 Clone the command server:
 ```
@@ -176,11 +178,12 @@ Received commmand with text: whatever
 ```
 
 Adding a new Slash Command:
+```
 1. First create a Slash Command and upload to github
 2. Publish the new Slash Command on npmjs.com
 3. Add your new Slash Command to your Slash Command Server
 4. Test your new Slash Command on Slack
-
+```
 
 
 
