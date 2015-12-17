@@ -239,7 +239,7 @@ package.json
 
 To re-test on Heroku and in Slack, you'll need to use git to add, commit and push the changes for 'package.json' to Heroku.
 
-You'll also need to add a new your new slash command as an integration in Slack, and add a new token setting on your Heroku app settings page.
+You'll also need to add your new slash command as an integration in Slack, and add a new token setting on your Slash Command Server's Heroku app settings page.
 
 
 
