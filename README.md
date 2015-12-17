@@ -1,7 +1,7 @@
 # command-server
 A simple Slack Slash Command Server example, includes a very simple slash command (command-simple).
 
-This Slash Command Server supports new slash commands via npm modules.
+This Slash Command Server supports new slash commands by creating and installing new npm modules.
 
 In the following steps we'll cover how to:
 ```
