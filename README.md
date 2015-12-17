@@ -161,7 +161,7 @@ https://dashboard.heroku.com/apps/command-server/settings
 
 Add a new setting the simple command token
 ```
-COMMAND_SIMPLE_TOKEN    <the copied token value from Slack>
+COMMAND_SIMPLE_TOKEN    <the token value copied from Slack>
 ```
 
 Test the Slash command in Slack
@@ -184,6 +184,66 @@ Adding a new Slash Command:
 3. Add your new Slash Command to your Slash Command Server
 4. Test your new Slash Command on Slack
 ```
+
+You can create your new Slash Command by copying command-simple
+
+Clone the command server:
+```
+git clone git@github.com:gregmercer/command-simple.git
+cd command-simple
+``` 
+
+Copy the following files into a new directory:
+```
+lib/command-simple.js
+index.js
+LICENSE.md
+package.json
+README.md
+```
+
+Change any mentions of command-simple to the name of your new command.
+
+You can see another example at:
+```
+https://github.com/gregmercer/command-chart
+```
+
+Upload your new command to your github account.
+
+Publish your new command to npmjs.com
+
+Type the following in the directory of your new command:
+```
+npm login
+npm publish
+```
+
+Check that your new command has been published. 
+You should see it listed on your npmjs account page.
+
+In Chrome, go to your npmjs.com account page:
+```
+https://www.npmjs.com/~<your account name>
+```
+
+Install the new command on your Slash Command Server
+```
+npm i --save <the name of your new command>
+```
+
+This should update the following file on your Slash Command Server:
+```
+package.json
+```
+
+To re-test on Heroku and in Slack, you'll need to use git to add, commit and push the changes for 'package.json' to Heroku.
+
+You'll also need to add a new your new slash command as an integration in Slack, and add a new token setting on your Heroku app settings page.
+
+
+
+
 
 
 
