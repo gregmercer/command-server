@@ -237,9 +237,29 @@ This should update the following file on your Slash Command Server:
 package.json
 ```
 
-To re-test on Heroku and in Slack, you'll need to use git to add, commit and push the changes for 'package.json' to Heroku.
+Update the 'handlers.json' file on your Slash Command Server to have a new entry for your new command.
 
-You'll also need to add your new slash command as an integration in Slack, and add a new token setting on your Slash Command Server's Heroku app settings page.
+Your 'handlers.json' file should now look something like this:
+```
+[
+  {
+    "command": "simple",
+    "pkg": "command-simple",
+    "tokenVar": "COMMAND_SIMPLE_TOKEN",
+    "options": {"protocol": "https"}
+  },
+  {
+    "command": "chart",
+    "pkg": "command-chart",
+    "tokenVar": "COMMAND_CHART_TOKEN",
+    "options": {"protocol": "https"}
+  }
+]
+```
+
+To re-test on Heroku and in Slack, you'll need to use git to add, commit and push the changes for 'package.json' and 'handlers.json' to Heroku.
+
+You'll also need to add your new slash command as a new integration in Slack, and add a new token setting on your Slash Command Server's Heroku app settings page.
 
 
 
